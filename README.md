@@ -1,21 +1,41 @@
-# 🚀 easy-VLM 项目：轻量级视觉语言模型复现与探索
+# 🌱 easy-VLM  
+> A minimal yet powerful **vision-language** reproduction for learning & hacking.
 
-## 🌟 项目定位
-**easy-VLM** 是一个专注于复现轻量级视觉语言模型（Visual-Language Model）的开源项目。核心目标是通过深度解构现有主流大语言模型（LLM）技术，建立对多模态技术的系统性认知。
+---
 
-📌 **项目原型**：基于 minimind-V 项目进行复现  
-📌 **特色改进**：添加中文代码注释 + 融合个人技术见解
+## 🎯 Objective  
+Re-implement a **lightweight** vision-language model to build an intuitive, deep understanding of the mainstream LLM techniques in use today.
 
-## 🧠 核心技术覆盖
-| 模块类别            | 关键技术组件                          |
-|---------------------|---------------------------------------|
-| **大模型基础架构**  | Transformer 注意力机制, RMSNorm, <br>混合专家系统（MoE）, KV缓存, RoPE位置编码 |
-| **大模型训练范式**  | 预训练（Pre-training）, <br>指令微调（Fine-tuning） |
-| **多模态融合方案**  | 视觉编码器特征提取 → 视觉令牌化 → <br>语言模型跨模态注入 |
+---
 
-## ⚙️ 训练与部署
-- **硬件要求**：支持 RTX 4060Ti 8G 显卡训练
-- **关键配置**：需根据显存限制调整模型参数
-- **性能注意**：⚠️ 混合专家模型（MoE）训练时会出现显著性能下降
+## 🧬 Origin  
+Fork & revival of the original [**minimind-V**](https://github.com/link-to-minimind-V) with:  
+- ✏️ **Chinese code comments**  
+- 💡 **Personal insights & notes** sprinkled throughout  
 
-> **研究价值**：通过轻量化设计，该项目为开发者提供了**低成本实践多模态技术**的路径，尤其适合LLM技术原理的入门与深度研究。
+---
+
+## 📦 What’s Inside  
+
+| Module | Highlights |
+|--------|-----------|
+| **Core Building Blocks** | <ul><li>Self-/Cross-Attention</li><li>RMSNorm</li><li>MoE (Mixture of Experts)</li><li>KV-Cache</li><li>RoPE</li></ul> |
+| **Training Pipeline** | <ul><li>Pre-training</li><li>Fine-tuning</li></ul> |
+| **Multimodal Alignment** | Plug-and-play pre-trained **vision encoders** to tokenize images and inject visual embeddings into the language backbone. |
+
+---
+
+## ⚙️ Hardware Requirements  
+
+| GPU | VRAM | Notes |
+|-----|------|-------|
+| RTX 4060 Ti | 8 GB | ✅ Trainable with **tuned hyper-params**<br>⚠️ MoE variant shows **noticeable slowdown** |
+
+---
+
+## 🚀 Quick Start  
+```bash
+git clone https://github.com/your-id/easy-VLM.git
+cd easy-VLM
+pip install -r requirements.txt
+python train.py --config configs/vlm_tiny.yml
