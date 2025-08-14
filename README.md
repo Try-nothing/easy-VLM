@@ -1,2 +1,21 @@
-# easy-VLM
-Used to reproduce a simple visual-language lightweight model. The primary objective is to gain a deep understanding of the existing LLM technologies that are widely applied.
+# 🚀 easy-VLM 项目：轻量级视觉语言模型复现与探索
+
+## 🌟 项目定位
+**easy-VLM** 是一个专注于复现轻量级视觉语言模型（Visual-Language Model）的开源项目。核心目标是通过深度解构现有主流大语言模型（LLM）技术，建立对多模态技术的系统性认知。
+
+📌 **项目原型**：基于 minimind-V 项目进行复现  
+📌 **特色改进**：添加中文代码注释 + 融合个人技术见解
+
+## 🧠 核心技术覆盖
+| 模块类别            | 关键技术组件                          |
+|---------------------|---------------------------------------|
+| **大模型基础架构**  | Transformer 注意力机制, RMSNorm, <br>混合专家系统（MoE）, KV缓存, RoPE位置编码 |
+| **大模型训练范式**  | 预训练（Pre-training）, <br>指令微调（Fine-tuning） |
+| **多模态融合方案**  | 视觉编码器特征提取 → 视觉令牌化 → <br>语言模型跨模态注入 |
+
+## ⚙️ 训练与部署
+- **硬件要求**：支持 RTX 4060Ti 8G 显卡训练
+- **关键配置**：需根据显存限制调整模型参数
+- **性能注意**：⚠️ 混合专家模型（MoE）训练时会出现显著性能下降
+
+> **研究价值**：通过轻量化设计，该项目为开发者提供了**低成本实践多模态技术**的路径，尤其适合LLM技术原理的入门与深度研究。
